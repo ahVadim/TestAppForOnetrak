@@ -52,6 +52,7 @@ public class DataHolder extends RecyclerView.ViewHolder {
     }
 
     public void bind(Data data){
+        mLinearLayout.setBackgroundColor(0);
         mSumSteps = data.getSumSteps();
         mTVStepsWalk.setText(data.getStringWalk());
         mTVStepsAerobic.setText(data.getStringAerobic());
