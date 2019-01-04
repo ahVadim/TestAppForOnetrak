@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="pb_margin">4dp</dimen>
+    <dimen name="pb_height">12dp</dimen>
+    <dimen name="tv_steps_number_margin">8dp</dimen>
+    <dimen name="tv_steps_number_textsize">20sp</dimen>
+</resources>
