@@ -13,6 +13,7 @@ import java.util.List;
 
 public class DataAdapter extends RecyclerView.Adapter<DataHolder> {
     private List<Data> mData = new ArrayList<>();
+    private int mAimValue;
     @NonNull
     @Override
     public DataHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -23,15 +24,16 @@ public class DataAdapter extends RecyclerView.Adapter<DataHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull DataHolder dataHolder, int i) {
-        dataHolder.bind(mData.get(i));
+        dataHolder.bind(mData.get(i), mAimValue);
     }
 
-    public void addData(List<Data> data){
+    public void addData(List<Data> data, int aimSteps){
+        mAimValue = aimSteps;
         if (data!=null){
             mData.clear();
             mData.addAll(data);
-            notifyDataSetChanged();
         }
+        notifyDataSetChanged();
     }
 
     @Override

@@ -43,21 +43,21 @@
             android:layout_width="0dp"
             android:layout_weight="0.3"
             android:layout_height="@dimen/pb_height"
-            android:id="@+id/pb_walk"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_margin="@dimen/pb_margin"
-            android:indeterminateTint="@color/color1"
-            android:indeterminateTintMode="src_in"/>
-        <ProgressBar
-            android:layout_width="0dp"
-            android:layout_weight="0.3"
-            android:layout_height="@dimen/pb_height"
             android:id="@+id/pb_aerobic"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_margin="@dimen/pb_margin"
             android:indeterminateTintMode="src_in"
             android:indeterminateTint="@color/color2"
             />
+        <ProgressBar
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="@dimen/pb_height"
+            android:id="@+id/pb_walk"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_margin="@dimen/pb_margin"
+            android:indeterminateTint="@color/color1"
+            android:indeterminateTintMode="src_in"/>
         <ProgressBar
             android:layout_width="0dp"
             android:layout_weight="0.3"

@@ -51,7 +51,8 @@ public class DataHolder extends RecyclerView.ViewHolder {
 
     }
 
-    public void bind(Data data){
+    public void bind(Data data, int aimSteps){
+        mAimSteps = aimSteps;
         mLinearLayout.setBackgroundColor(0);
         mSumSteps = data.getSumSteps();
         mTVStepsWalk.setText(data.getStringWalk());
@@ -82,7 +83,7 @@ public class DataHolder extends RecyclerView.ViewHolder {
             @Override
             public void onAnimationUpdate(ValueAnimator valueAnimator1) {
                 int animProgress = (int)valueAnimator.getAnimatedValue();
-                mTVFullSteps.setText(Integer.toString(mSumSteps * animProgress/100)+"/4000");
+                mTVFullSteps.setText(Integer.toString(mSumSteps * animProgress/100)+"/" + Integer.toString(mAimSteps));
                 mAerobicProgress.setProgress(animProgress);
                 mRunProgress.setProgress(animProgress);
                 mWalkProgress.setProgress(animProgress);
