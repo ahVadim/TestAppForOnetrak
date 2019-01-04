@@ -2,8 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/item_container"
+    android:animateLayoutChanges="true"
+    android:layout_margin="@dimen/tv_steps_number_margin">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -13,6 +16,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/tv_date"
             android:layout_alignParentLeft="true"
+            android:textStyle="bold"
             android:textSize="18sp"
             tools:text="15.02.2017"
             android:layout_margin="4dp"/>
@@ -21,6 +25,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/tv_full_steps"
             android:layout_alignParentRight="true"
+            android:textStyle="bold"
             android:textSize="18sp"
             tools:text="2570 / 4000 steps"
             android:layout_margin="4dp"/>
@@ -31,28 +36,37 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_margin="4dp">
+        android:layout_margin="4dp"
+        android:id="@+id/linear_progress"
+        android:weightSum="1">
         <ProgressBar
             android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_weight="0.3"
             android:layout_height="@dimen/pb_height"
             android:id="@+id/pb_walk"
             style="?android:attr/progressBarStyleHorizontal"
-            android:layout_margin="@dimen/pb_margin"/>
+            android:layout_margin="@dimen/pb_margin"
+            android:indeterminateTint="@color/color1"
+            android:indeterminateTintMode="src_in"/>
         <ProgressBar
             android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_weight="0.3"
             android:layout_height="@dimen/pb_height"
             android:id="@+id/pb_aerobic"
             style="?android:attr/progressBarStyleHorizontal"
-            android:layout_margin="@dimen/pb_margin"/>
+            android:layout_margin="@dimen/pb_margin"
+            android:indeterminateTintMode="src_in"
+            android:indeterminateTint="@color/color2"
+            />
         <ProgressBar
             android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_weight="0.3"
             android:layout_height="@dimen/pb_height"
             android:id="@+id/pb_run"
             style="?android:attr/progressBarStyleHorizontal"
-            android:layout_margin="@dimen/pb_margin"/>
+            android:layout_margin="@dimen/pb_margin"
+            android:indeterminateTint="@color/color3"
+            android:indeterminateTintMode="src_in"/>
     </LinearLayout>
 
     <LinearLayout
@@ -69,6 +83,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/tv_aerobic_steps"
                 tools:text="630"
+                android:textColor="@color/color1"
+                android:textStyle="bold"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="@dimen/tv_steps_number_margin"
                 android:layout_marginTop="@dimen/tv_steps_number_margin"
@@ -92,6 +108,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/tv_walk_steps"
                 tools:text="630"
+                android:textStyle="bold"
+                android:textColor="@color/color2"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="@dimen/tv_steps_number_margin"
                 android:layout_marginTop="@dimen/tv_steps_number_margin"
@@ -116,6 +134,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/tv_run_steps"
                 tools:text="630"
+                android:textStyle="bold"
+                android:textColor="@color/color3"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="@dimen/tv_steps_number_margin"
                 android:layout_marginTop="@dimen/tv_steps_number_margin"
@@ -130,6 +150,10 @@
 
         </RelativeLayout>
     </LinearLayout>
+
+    <include layout="@layout/success"
+        android:visibility="gone"
+        />
 
 
 </LinearLayout>
