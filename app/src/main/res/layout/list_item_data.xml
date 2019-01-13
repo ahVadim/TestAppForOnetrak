@@ -152,7 +152,7 @@
     </LinearLayout>
 
     <include layout="@layout/success"
-        android:visibility="gone"
+        android:visibility="visible"
         />
 
 
